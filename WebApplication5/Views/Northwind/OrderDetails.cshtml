@@ -1,0 +1,31 @@
+﻿@using WebApplication5.Models
+@model IEnumerable<OrderDetail>
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+    <table class="table table-hover table-bordered">
+        <tr>
+            <th>Order Id</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+        </tr>
+        @foreach (OrderDetail order in Model)
+        {
+            <tr>
+                <td>@order.OrderId</td>
+                <td>@order.UnitPrice.ToString("C")</td>
+                <td>@order.Quantity</td>
+            </tr>
+        }
+    </table>
+</div>
+</body>
+</html>

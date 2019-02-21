@@ -1,0 +1,35 @@
+﻿@using WebApplication5.Models
+@model ProductsViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+    <h1>Products for @Model.CategoryName</h1>
+    <table class="table table-hover table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Unit Price</th>
+            <th>Quantity Per Unit</th>
+        </tr>
+        @foreach (Product product in Model.Products)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>
+                    @product.Name
+                </td>
+                <td>@product.UnitPrice.ToString("C")</td>
+                <td>@product.QuantityPerUnit</td>
+            </tr>
+        }
+    </table>
+</div>
+</body>
+</html>
